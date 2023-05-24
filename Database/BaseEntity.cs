@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CompanyManager.Database
 {
@@ -8,6 +9,6 @@ namespace CompanyManager.Database
         [MaxLength(18)]
         public string name { get; set; }
         public DateTime createdOn { get; set; }
-        public DateTime removedOn { get; set; }
+        public DateTime? removedOn { get; set; }
     }
 }

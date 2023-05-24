@@ -1,6 +1,7 @@
 using CompanyManager.Database;
 using CompanyManager.Database.Entities;
 using CompanyManager.Interfaces.ControllerInterfaces;
+using CompanyManager.Seeder;
 using CompanyManager.Services;
 using Microsoft.EntityFrameworkCore;
 

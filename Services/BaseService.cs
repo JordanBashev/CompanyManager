@@ -1,5 +1,6 @@
 ﻿using CompanyManager.Database;
 using CompanyManager.Interfaces.ControllerInterfaces;
+using CompanyManager.Services.NewFolder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +10,7 @@ namespace CompanyManager.Services
     {
         private readonly CompanyManagerContext _context;
         private readonly DbSet<T> _dbSet;
-        
+
         public BaseService(CompanyManagerContext context)
         {
             _context = context;
@@ -18,7 +19,7 @@ namespace CompanyManager.Services
 
         [HttpGet]
         public List<T> GetAll()
-        { 
+        {
             return _dbSet.ToList();
         }
 
@@ -42,12 +43,12 @@ namespace CompanyManager.Services
                 return false;
 
             //Ne ma kefi tui da se preraboti ako svursha dneska mnogo grozno sus skobi
-            if (result == null && data != null)
+            if (result == null && data != null)         
                 _dbSet.Add(data);
             else if (id != 0 && data != null)
             {
-                result = data;
-                _dbSet.Update(result);
+                _context.Entry(result).State = EntityState.Detached;
+                _dbSet.UpdateRange(data);
             }
                 
             _context.SaveChanges();

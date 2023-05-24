@@ -45,7 +45,7 @@ namespace CompanyManager.Migrations
                         .HasMaxLength(18)
                         .HasColumnType("nvarchar(18)");
 
-                    b.Property<DateTime>("removedOn")
+                    b.Property<DateTime?>("removedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("salary")
@@ -95,7 +95,7 @@ namespace CompanyManager.Migrations
                         .HasMaxLength(18)
                         .HasColumnType("nvarchar(18)");
 
-                    b.Property<DateTime>("removedOn")
+                    b.Property<DateTime?>("removedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("salary")
@@ -144,7 +144,7 @@ namespace CompanyManager.Migrations
                         .HasMaxLength(18)
                         .HasColumnType("nvarchar(18)");
 
-                    b.Property<DateTime>("removedOn")
+                    b.Property<DateTime?>("removedOn")
                         .HasColumnType("datetime2");
 
                     b.HasKey("id");
@@ -173,7 +173,7 @@ namespace CompanyManager.Migrations
                     b.Property<double>("pointsPerPerson")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("removedOn")
+                    b.Property<DateTime?>("removedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("task")

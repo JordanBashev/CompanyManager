@@ -16,75 +16,53 @@ namespace CompanyManager.Controllers
         private readonly IBaseServiceInterface<Employee> _employeeService;
         private readonly IBaseServiceInterface<Manager> _managerService;
 
-        public BaseController(IBaseServiceInterface<Employee> employeeService, IBaseServiceInterface<Manager> managerService)
+        public BaseController(IBaseServiceInterface<Employee> Service, IBaseServiceInterface<Manager> Service2)
         {
-            _employeeService = employeeService;
-            _managerService = managerService;
+            _employeeService = Service;
+            _managerService = Service2; 
         }
 
-        [Route("GetAll")]
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var allManagers = _managerService.GetAll();
+        //[Route("Authenticate")]
+        //[HttpPost]
+        //public IActionResult Authenticate([FromBody] string username, string password)
+        //{
+        //    var getEmployee = _service.CustomQuery().FirstOrDefault(x => x.username == username);
+        //    var getManager = _service.CustomQuery().FirstOrDefault(x => x.username == username);
 
-            if (!allManagers.IsNullOrEmpty())
-                return Ok(allManagers);
+        //    if (getEmployee == null && getManager == null)
+        //        return Unauthorized();
 
-            return Problem("No managers found Lmaoooooooooooo  ahhaaa");
-        }
+        //    if (getEmployee != null)
+        //        return AuthenticatePerson(getEmployee);
 
-        [Route("Post")]
-        [HttpPost]
-        public IActionResult Post([FromBody] Manager manager)
-        {
-            if (_managerService.Edit(manager))
-                return Ok(manager);
+        //    if (getManager != null)
+        //        return AuthenticatePerson(getManager);
 
-            return Problem("No managers Createeed Lmaoooooooooooo  ahhaaa");
-        }
+        //    return BadRequest();
+        //}
 
-        [Route("Authenticate")]
-        [HttpPost]
-        public IActionResult Authenticate([FromBody] string username, string password)
-        {
-            var getEmployee = _employeeService.CustomQuery().FirstOrDefault(x => x.username == username);
-            var getManager = _managerService.CustomQuery().FirstOrDefault(x => x.username == username);
+        //private ActionResult AuthenticatePerson<T>(T data) where T : BaseEntity
+        //{
+        //    var claims = new[]
+        //    {
+        //        new Claim("LoggedUserId", data.id.ToString())
+        //    };
 
-            if (getEmployee == null && getManager == null)
-                return Unauthorized();
+        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SpecialHiddenCaractarsForManiger"));
+        //    var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            if (getEmployee != null)
-                return AuthenticatePerson(getEmployee);
+        //    var token = new JwtSecurityToken(
+        //        "https://localhost:7169",
+        //        "https://localhost:7169",
+        //        claims,
+        //        expires: DateTime.UtcNow.AddDays(1),
+        //        signingCredentials: signingCredentials
+        //    );
 
-            if (getManager != null)
-                return AuthenticatePerson(getManager);
+        //    JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+        //    string jwt = tokenHandler.WriteToken(token);
 
-            return BadRequest();
-        }
-
-        private ActionResult AuthenticatePerson<T>(T data) where T : BaseEntity
-        {
-            var claims = new[]
-            {
-                new Claim("LoggedUserId", data.id.ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SpecialHiddenCaractarsForManiger"));
-            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                "https://localhost:7169",
-                "https://localhost:7169",
-                claims,
-                expires: DateTime.UtcNow.AddDays(1),
-                signingCredentials: signingCredentials
-            );
-
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-            string jwt = tokenHandler.WriteToken(token);
-
-            return Ok(new { success = true, token = jwt });
-        }
+        //    return Ok(new { success = true, token = jwt });
+        //}
     }
 }
