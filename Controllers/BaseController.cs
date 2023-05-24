@@ -1,7 +1,6 @@
 ﻿using CompanyManager.Database;
 using CompanyManager.Database.Entities;
 using CompanyManager.Interfaces.ControllerInterfaces;
-using CompanyManager.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

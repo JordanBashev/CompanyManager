@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S1JJFCAMib+tR1sztns1/+2RJTGWOEw8ITOyVEabz1wNU5KcMEeh2oN091djLfik973GmKgi8pJ3thBhjBWrNw==",
+  "dgSpecHash": "aK/KgrOILp4f7MGQptj+xixgT/3Vmm+i0e0SJXezQAqRzEapED82GmHytqkXn/rrRpMrIsbMjOPhDBPdQXWDWg==",
   "success": true,
-  "projectFilePath": "D:\\CompanyManagerProject\\CompanyManagerApi\\CompanyManager\\CompanyManager.csproj",
+  "projectFilePath": "D:\\CompanyManagerApi\\CompanyManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

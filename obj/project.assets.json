@@ -3516,11 +3516,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CompanyManagerProject\\CompanyManagerApi\\CompanyManager\\CompanyManager.csproj",
+      "projectUniqueName": "D:\\CompanyManagerApi\\CompanyManager.csproj",
       "projectName": "CompanyManager",
-      "projectPath": "D:\\CompanyManagerProject\\CompanyManagerApi\\CompanyManager\\CompanyManager.csproj",
+      "projectPath": "D:\\CompanyManagerApi\\CompanyManager.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\CompanyManagerProject\\CompanyManagerApi\\CompanyManager\\obj\\",
+      "outputPath": "D:\\CompanyManagerApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
