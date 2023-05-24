@@ -1,2 +1,2 @@
 # CompanyManager
-SchoolProject
+Api for CompanyManagerC - the Client
